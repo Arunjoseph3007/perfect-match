@@ -5,7 +5,7 @@ A simple pattern matcing library
 ## Ultimate API
 
 ```ts
-import { match } from "perfect-match";
+import { DEFAULT, match } from "perfect-match";
 import z from "zod";
 
 const matcher = match(
@@ -26,6 +26,8 @@ const matcher = match(
   [z.string(), "Option 8"],
   [z.number(), "Option 9"],
   [z.bool(), "Option 10"],
-  [z.bool(), "Option 10"]
+  [z.bool(), "Option 10"],
+  // Catch all default
+  [DEFAULT, "Option 11"]
 );
 ```
